@@ -17,7 +17,7 @@ db = SQLite3::Database.new "chinook.db"
 #puts db.execute( "DELETE FROM albums WHERE Title LIKE '%music%'" )
 
 # Récupère tout les albums écrit par AC/DC
-#puts db.execute( "SELECT ArtistId FROM artists WHERE Name='AC/DC'" )
+#puts db.execute( "SELECT Title FROM albums WHERE ArtistId=(SELECT ArtistId FROM artists WHERE Name='AC/DC')" )
 
 # Récupère tout les titres des albums de AC/DC
 #db.execute( "SELECT AlbumId FROM albums WHERE ArtistId=(SELECT ArtistId FROM artists WHERE Name='AC/DC')") do |row|
